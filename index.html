@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="dist/css/style.min.css" />
+    <script src="js/main.js" type="module"></script>
+    <title>to do list</title>
+</head>
+
+<body>
+    <main>
+        <section class="newItemEntry">
+            <form id="itemEntryForm">
+                <label for="newItem">enter a new to do item</label>
+                <!-- if u r using safari or safari on mac,then remember to make safari and mac accessible for tabindex(tab access) -->
+                <input id="newItem" type="text" size="40" autocomplete="off" placeholder="add item" tabindex="0" />
+                <button id="addItem" class="button" title="add new item" aria-label="add new item to list"
+                    tabindex="0">+</button>
+            </form>
+        </section>
+        <section class="listContainer">
+            <div class="listTitle">
+                <h1 tabindex="0">to do list</h1>
+                <button id="clearItems" class="button" title="clear the list"
+                    aria-label="remove all items from the list" tabindex="0">clear</button>
+            </div>
+            <hr />
+            <div id="listItems">
+                <!-- coming from main.js
+                  <div class="item">
+                  <input type="checkbox" id="1" tabindex="0" />
+                  <label for="1">read</label>
+                </div>
+                -->
+            </div>
+            <!-- aria-live="assertive" it's going to read whatever happens in element immediately(with screen reader)-->
+            <p id="confirmation" class="confirmation" aria-live="assertive"></p>
+        </section>
+    </main>
+</body>
+
+</html>

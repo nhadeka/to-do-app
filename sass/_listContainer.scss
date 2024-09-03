@@ -1,0 +1,59 @@
+.listContainer {
+    // vh=viewport height=the browser window size. 1vh=1% of the height of the viewport
+    min-height: 60vh;
+    padding: 0.75rem;
+
+    .listTitle {
+        display: flex;
+        justify-content: space-between;
+        // cross axis is vertical so items will be aligned vertically at the bottom 
+        align-items: flex-end;
+
+        button {
+            font-size: 1rem;
+            background-color: $clear-button-color;
+            padding: 0 0.1rem;
+            margin-bottom: 0.5rem;
+
+            @include mq(768px) {
+                padding: 0 0.5rem;
+            }
+        }
+
+        hr {
+            width: 100%;
+
+        }
+    }
+
+    .item {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 1rem;
+
+        input[type="checkbox"] {
+            text-align: center;
+            width: 2.5rem;
+            min-width: 48px;
+            height: 2.5rem;
+            min-height: 48px;
+            cursor: pointer;
+            margin-right: 1.5rem;
+        }
+
+        input[type="checkbox"]:focus+label {
+            text-decoration: underline;
+        }
+
+        label {
+            font-size: 1.1rem;
+        }
+    }
+
+    .confirmation {
+        position: absolute;
+        //it's going to be off screen
+        left: -10000px;
+    }
+}

@@ -1,0 +1,56 @@
+$default-font-color: #000;
+$background-color: #c94fd7;
+$container-bg-color: #f2f2f2;
+$container-border-color: #000;
+$text-box-border-color: lightgray;
+$button-text-color: #fff;
+$add-button-color: #4caf50;
+$clear-button-color: #9f6060;
+
+@mixin mq($size) {
+
+    //mq=media query
+    //@media only rule to include a block of css properties ONLY if a certain condition is true.
+    //with @mixin, we create reusable css code.(has similarities with interface)
+    @media only screen and (min-width:$size) {
+        @content;
+    }
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    /*  it means our 1 rem = 16px (which is default) but if we change it to 24px,
+    then 1rem = 24px. rem = root em = font-size of root element of document(html).
+    rem refers to the font-size of the html element 
+    while em refers to the font-size of the element it is used on
+    (in some cases, the font-size of the parent element) */
+    font-family: sans-serif;
+    font-size: 16px;
+    color: $default-font-color;
+    width: 100%;
+    min-height: 100%;
+
+    @include mq(768px) {
+        font-size: 22px;
+    }
+}
+
+body {
+    padding: 20px;
+    background-color: $background-color;
+}
+
+section {
+    background-color: $container-bg-color;
+    width: 90%;
+    max-width: 700px;
+    margin: auto;
+    border: 1px solid $container-border-color;
+    border-radius: 10px;
+}
